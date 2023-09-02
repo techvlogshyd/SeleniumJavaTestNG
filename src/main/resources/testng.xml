@@ -4,14 +4,14 @@
     <test name="my hub spot test chrome" parallel="methods" thread-count="1">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.tests.LoginTest"/>
+            <class name="com.tests.GreenKartTest"/>
         </classes>
     </test>
 
-    <test name="my hub spot test firefox" parallel="methods" thread-count="1">
-        <parameter name="browser" value="ff"></parameter>
-        <classes>
-            <class name="com.tests.LoginTest"/>
-        </classes>
-    </test>
+<!--    <test name="my hub spot test firefox" parallel="methods" thread-count="1">-->
+<!--        <parameter name="browser" value="ff"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.tests.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

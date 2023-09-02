@@ -34,16 +34,19 @@ public class Wrappers {
     }
 
     public void click(By by) {
+        waitForElementToBeClickable(by);
         findElement(by).click();
     }
 
     public void typeText(By by, String text) {
+        waitForElementToBePresent(by);
         WebElement element = findElement(by);
         element.clear();
         element.sendKeys(text);
     }
 
     public void typeText(WebElement element, String text) {
+        waitForElementToBePresent((By) element);
         element.clear();
         element.sendKeys(text);
     }
