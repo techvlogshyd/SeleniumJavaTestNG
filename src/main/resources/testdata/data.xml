@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root>
+    <person>
+        <name>John</name>
+        <address>New York, USA</address>
+    <age>30</age></person>
+    <person>
+        <name>Alice</name>
+        <address>London, UK</address>
+    </person>
+</root>

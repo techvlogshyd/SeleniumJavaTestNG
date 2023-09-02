@@ -1,0 +1,5 @@
+Retry- implement IRetryAnalyzer, I AnnotationTransformer
+Reports- Extent and Allure
+Screenshot on test failure- ITestListener
+verbose in testNG
+Utils excel, properties, XML and JSON
