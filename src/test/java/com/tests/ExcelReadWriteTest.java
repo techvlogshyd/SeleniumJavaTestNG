@@ -1,15 +1,15 @@
 package com.tests;
 
-import com.utils.ExcelReader;
+import com.utils.ExcelFileManager;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-public class ExcelReadWrite {
+public class ExcelReadWriteTest {
    @Test
-    public void excelReadWriteTest() {
+    public void testExcelFileManager() {
 
-       ExcelReader reader = new ExcelReader("/Users/prasanna/FrameWork/Automation/src/main/resources/testdata/testdata.xls");
+       ExcelFileManager reader = new ExcelFileManager("src/main/resources/testdata/testdata.xls");
        int col = reader.getColumnCount("register");
        System.out.println(col);
 

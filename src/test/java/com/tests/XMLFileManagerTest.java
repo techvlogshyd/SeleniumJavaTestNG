@@ -9,7 +9,7 @@ public class XMLFileManagerTest {
 
     @Test
     public void testXMLFileManager() {
-        XMLFileManager xmlFileManager = new XMLFileManager("/Users/prasanna/FrameWork/Automation/src/main/resources/testdata/data.xml");
+        XMLFileManager xmlFileManager = new XMLFileManager("src/main/resources/testdata/data.xml");
 
         // Reading XML
         NodeList nodeList = xmlFileManager.getElementsByTagName("name");

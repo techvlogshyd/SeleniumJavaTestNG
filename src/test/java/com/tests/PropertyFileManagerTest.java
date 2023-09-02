@@ -7,7 +7,7 @@ public class PropertyFileManagerTest {
 
     @Test
     public void testPropertyFileManager(){
-        PropertyFileManager propertyManager = new PropertyFileManager("/Users/prasanna/FrameWork/Automation/src/main/resources/testdata/config.properties");
+        PropertyFileManager propertyManager = new PropertyFileManager("src/main/resources/testdata/config.properties");
 
         // Reading properties
         String username = propertyManager.getProperty("username");
