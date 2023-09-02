@@ -27,7 +27,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 
 
-public class ExcelReader {
+public class ExcelFileManager {
 
     public String path;
     public FileInputStream fis = null;
@@ -37,7 +37,7 @@ public class ExcelReader {
     private HSSFRow row = null;
     private HSSFCell cell = null;
 
-    public ExcelReader(String path) {
+    public ExcelFileManager(String path) {
 
         this.path = path;
         try {

@@ -7,8 +7,8 @@ import java.util.List;
 
 public class JSONFileManagerTest {
     @Test
-    public void testPropertyFileManager(){
-        com.utils.JSONFileManager jsonFileManager = new com.utils.JSONFileManager("/Users/prasanna/FrameWork/Automation/src/main/resources/testdata/data.json");
+    public void testJSONFileManager(){
+        com.utils.JSONFileManager jsonFileManager = new com.utils.JSONFileManager("src/main/resources/testdata/data.json");
 
         // Reading JSON
         System.out.println("Initial JSON Data: " + jsonFileManager.jsonObject.toString());
