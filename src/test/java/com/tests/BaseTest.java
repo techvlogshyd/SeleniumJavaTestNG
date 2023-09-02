@@ -24,7 +24,9 @@ public class BaseTest {
         } else {
             System.out.println("No browser is defined in XML...");
         }
-        driver.get("https://app.hubspot.com/");
+//        driver.get("https://app.hubspot.com/");
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+
         driver.manage().window().maximize();
         try {
             Thread.sleep(6000);
