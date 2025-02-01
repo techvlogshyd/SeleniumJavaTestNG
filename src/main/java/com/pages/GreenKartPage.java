@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GreenKartPage extends BasePage{
     private Wrappers common;
@@ -23,6 +24,11 @@ public class GreenKartPage extends BasePage{
     private By btnProceedCountry = By.xpath("//*[contains(text(),'Proceed')]");
 
     private By labelSuccessMsg = By.xpath("//*[contains(text(),'Thank you, your order has been placed successfully')]");
+
+    private By txtSearch = By.className("search-keyword");
+    private By btnSearch = By.className("search-button");
+    private By txtQuantity = By.xpath("//input[@class='quantity']");
+    private By btnAddToCart = By.xpath("//*[text()='ADD TO CART']");
 
     public GreenKartPage(WebDriver driver) {
         super(driver);
@@ -51,4 +57,44 @@ public class GreenKartPage extends BasePage{
         return new GreenKartPage(driver);
     }
 
+    public GreenKartPage searchItemAndToCart(List<String> items, int quantity){
+        for(String item : items){
+            common.typeText(txtSearch, item);
+            common.click(btnSearch);
+            common.typeText(txtQuantity, String.valueOf(quantity));
+            common.click(btnAddToCart);
+        }
+        return new GreenKartPage(driver);
+    }
+
+    public GreenKartPage updateQuantity(){
+        List<String> items = new ArrayList<>();
+        items.add("Brocolli - 1 Kg");
+        items.add("Carrot - 1 Kg");
+        items.add("Capsicum");
+        for (String item:items) {
+            common.click(driver.findElement(By.xpath(String.format(itemAddToCart, item))));
+        }
+        common.click(iconCart);
+        common.click(btnProceed);
+        common.typeText(txtPromo,"rahulshettyacademy");
+        common.click(btnPromo);
+        common.click(btnPlaceOrder);
+        common.selectDropdownByValue(ddlCountry,"India");
+        common.click(chkAgree);
+        common.click(btnProceedCountry);
+//        Assert.assertTrue(common.findElement(labelSuccessMsg));
+        return new GreenKartPage(driver);
+    }
+
+    public GreenKartPage searchItemAndToCart(Map<String, Integer> items) {
+        for (Map.Entry<String, Integer> entry : items.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            common.typeText(txtSearch, entry.getKey());
+            common.click(btnSearch);
+            common.typeText(txtQuantity, String.valueOf(entry.getValue()));
+            common.click(btnAddToCart);
+        }
+        return new GreenKartPage(driver);
+    }
 }
